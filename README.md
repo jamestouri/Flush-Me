@@ -136,13 +136,4 @@ The user experience will go right to the map for the user to see the reviews of 
 * Allowing users to easily create their own toilet with pinpoint accuracy using Google Maps API using lat/long coordinates
 * Implementing effective search
 
-# Work Breakdown
-**Peter Niemeier, Austin Cotant, Anthony Tam, James Touri**
 
-#### Oct. 22 - 23
-- Deploy Google Maps **Austin**
-- Login and Signup Design **Anthony**
-- Toilet Model and Api **Pete**
-- Toilet Components **James**
-
-#### Oct. 24 - 25
