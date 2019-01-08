@@ -13,127 +13,16 @@ Technical challenges:
 Users will have a seamless experience on their mobile device, where user sign-up/sign-in, as well as toilet show pages and markers will be displayed primarily through modals, allowing users to quickly navigate and use our app without having to wait for re-rendering of our pages. This will be of the utmost importance to users who are most likely on-the-go while looking for a quick pit-stop.
 Having an accurate Google Map API to guide users not only to an accurate bathroom location, but directions to get there as well.
 
-# MVPS
-
-## User Auth
-- users sign in and sign out
-- users can create an account
-
-## Maps
-- map centers on location of user or san fran
-- users can see toilets near them displayed on the map
-- users can click on map to create toilet
-- users can create toilet at "my location"
-- markers reload within the bounds of the map
-- clicking marker show toilet show page
-
-## Toilets
-- crud toilets
-- toilets can have an image attached
-- users can search toilets by rating and distance
-
-## Comments
-- users can leave comments for toilet
-- crd
-
-## Bonus
-
-## Directions
-- Users can enter an end destination and find a toilet along the way
-
-## Map
-- has different icons based on rating
-- when users click a toilet they get a pop up with more information
-
-# Sample State
-
-```javascript
-    {
-        entities: {
-            users: {
-                2: {
-                    id: 2,
-                    username: 'steve',
-                }
-            },
-            toilets: {
-                42: {
-                    id: 42,
-                    lat: 37.23423,
-                    lng: -121.345,
-                    title: 'A great toilet',
-                    creator_id: 5,
-                }
-            },
-            comments: {
-                creator_id: 12,
-                body: 'I took a good poop, good lock too',
-                rating: 1-5,
-            }
-        },
-        session: {
-            id: 3
-        },
-        ui: {
-            maps: {
-                border: (lat, lng),
-                center: (lat, lng),
-            }
-        }
-        errors: {
-            session_errors: ["Must have stuff"]
-        }
-    }
-
+## Setup 
+- Clone repo 
+- run `npm install` in root folder 
+- run `npm install` in frontend folder 
+- Create keys_dev.js in config folder, and add mongoURI like this 
 ```
-
-# Wireframes
-
-![](https://github.com/peterniemeier/test/blob/master/ui1.jpg)
-
-***
-
-
-![](https://github.com/peterniemeier/test/blob/master/ui2.jpg)
-
-
-***
-
-
-![](https://github.com/peterniemeier/test/blob/master/ui3.jpg)
-
-# Technologies and Challenges
-
-## Architecture
-The architecture of Porcelain  will be deployed and maintained as a desktop application that can be responsive as on the mobile.
-
-Porcelain is built with the MERN stack (MongoDB, Express, React, and Node). It features a frontend agnostic API servicing both web and mobile in conjunction with client side rendering with React.
-
-### Backend
-
-The backend will be done in Node, Express, and MongoDB. With minimal relations, a NoSQL DB will be efficient for this project
-
-The schema consists of 3 models (Users, Toilets, and Comments)
-
-### Frontend
-
-- The frontend will be done in React/Redux.
-- Bootstrap will be used as a CSS library for responsive resizing of the view.
-- Redux will be making api calls to the backend
-
-
-## UI/UX
-
-The user experience will go right to the map for the user to see the reviews of toilets closest to them.  It will be similar to Waze with a crowdsourcing interface where users will be able to contribute their own reviews by simply clicking on a coordinate on the map.
-
-## Backend: MongoDB/Express
-**Technical challenges:**
-* Connecting the map markers and the data they contain to the MongoDB database
-## Frontend: React/Node.js
-**Technical challenges:**
-* Reading data from MongoDB database and organizing for display
-* Fetching data to build a marker for each toilet, bathroom
-* Allowing users to easily create their own toilet with pinpoint accuracy using Google Maps API using lat/long coordinates
-* Implementing effective search
-
-
+module.exports = {
+  mongoURI: 'mongodb-link-here',
+  secretOrKey: 'secret'
+}
+```
+- run `npm run dev` in root folder
+- launch application in localhost:3000
